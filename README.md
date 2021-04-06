@@ -12,5 +12,7 @@ Spare me too much hate on this implementation, took 35 min or so and had to jump
 # Container Orchestration
 This is obviously a horrible way to execute the container against the newly provisioned docker host. I should've provisioned an ECS cluster, defined a task definition for the nginx container, and then a service to reference it and maintain the availability.
 
-# BUG
-When running terraform validate against the config, the variables are flagged as unexpected. Will debug, not sure why :o
+# BUGS
+1. When running terraform validate against the config, the variables are flagged as unexpected. | FIXED - I'm used to being able to organize my modules structure however I wish, but because of git I had to put top level.
+
+2. For the sake of time, I used an existing AWS VPC module. This causes validations to fail regardless if region is specified or not. Usually I like to build my own abstractions like "keet.network" as a module over plain AWS resources and not use the pre made abstractions.
