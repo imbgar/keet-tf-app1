@@ -9,19 +9,19 @@ module "vpc" {
   public_subnets     = ["10.10.10.96/27", "10.10.10.128/27", "10.10.10.160/27"]
   enable_nat_gateway = true
   single_nat_gateway = true
-  tags               = {
+  tags = {
     Environment = "dev"
-    Owner = "theteam@keethealth.com"
+    Owner       = "theteam@keethealth.com"
   }
 }
 
 module "docker-base" {
-    source = "git::https://github.com/imbgar/keet-tf-example.git"
+  source = "git::https://github.com/imbgar/keet-tf-example.git"
 
-    env = "dev"
-    contact = "theteam@keethealth.com"
-    project = "keet-service"
-    vpc_id = module.vpc.vpc_id
-    instance_type = "m5.large"
+  env           = "dev"
+  contact       = "theteam@keethealth.com"
+  project       = "keet-service"
+  vpc_id        = module.vpc.vpc_id
+  instance_type = "m5.large"
 }
 
