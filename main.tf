@@ -16,7 +16,7 @@ module "vpc" {
 }
 
 module "docker-base" {
-    source = "git::https://github.com/imbgar/keef-tf-example.git"
+    source = "git::https://github.com/imbgar/keet-tf-example.git"
 
     env = "dev"
     contact = "theteam@keethealth.com"
