@@ -12,5 +12,5 @@ Spare me too much hate on this implementation, took 35 min or so and had to jump
 # Container Orchestration
 This is obviously a horrible way to execute the container against the newly provisioned docker host. I should've provisioned an ECS cluster, defined a task definition for the nginx container, and then a service to reference it and maintain the availability.
 
-# TODO
+# BUG
 When running terraform validate against the config, the variables are flagged as unexpected. Will debug, not sure why :o
